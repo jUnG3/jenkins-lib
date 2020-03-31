@@ -1,16 +1,13 @@
-package de.jenkins.util;
+package de.jenkins.util
 
-import hudson.model.ParameterValue;
-import hudson.model.SimpleParameterDefinition;
-import hudson.model.StringParameterValue;
-import net.sf.json.JSONObject;
-import org.apache.commons.lang.NotImplementedException;
-import org.kohsuke.stapler.StaplerRequest;
+import hudson.model.ParameterValue
+import hudson.model.SimpleParameterDefinition
+import hudson.model.StringParameterValue
+import net.sf.json.JSONObject
+import org.apache.commons.lang.NotImplementedException
+import org.kohsuke.stapler.StaplerRequest
 
-import java.util.Arrays;
-import java.util.List;
-
-public class DockerChoiceParameterDefinition extends SimpleParameterDefinition {
+class DockerChoiceParameterDefinition extends SimpleParameterDefinition {
 
     private final List<String> choices = Arrays.asList("docker-1", "docker-2");
 
