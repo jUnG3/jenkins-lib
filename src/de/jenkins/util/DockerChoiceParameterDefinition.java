@@ -4,8 +4,8 @@ import hudson.model.ParameterValue;
 import hudson.model.SimpleParameterDefinition;
 import hudson.model.StringParameterValue;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.NotImplementedException;
 import org.kohsuke.stapler.StaplerRequest;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Arrays;
 import java.util.List;
