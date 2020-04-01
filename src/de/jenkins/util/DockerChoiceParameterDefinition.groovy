@@ -1,13 +1,13 @@
 package de.jenkins.util
 
+import hudson.model.ParameterDefinition
 import hudson.model.ParameterValue
-import hudson.model.SimpleParameterDefinition
 import hudson.model.StringParameterValue
 import net.sf.json.JSONObject
 import org.apache.commons.lang.NotImplementedException
 import org.kohsuke.stapler.StaplerRequest
 
-class DockerChoiceParameterDefinition extends SimpleParameterDefinition {
+class DockerChoiceParameterDefinition extends ParameterDefinition {
 
     private final List<String> choices = Arrays.asList("docker-1", "docker-2");
 
@@ -20,13 +20,13 @@ class DockerChoiceParameterDefinition extends SimpleParameterDefinition {
     }
 
     @Override
-    public ParameterValue createValue(String value) {
-        return checkValue(value);
+    public ParameterValue createValue(StaplerRequest req, JSONObject jo) {
+        throw new NotImplementedException();
     }
 
     @Override
-    public ParameterValue createValue(StaplerRequest req, JSONObject jo) {
-        throw new NotImplementedException();
+    ParameterValue createValue(StaplerRequest req) {
+        throw new RuntimeException("Hello World");
     }
 
     protected StringParameterValue checkValue(String value) {
