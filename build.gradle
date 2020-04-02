@@ -18,14 +18,26 @@ repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    mavenCentral()
+    maven {
+        url 'https://repo.jenkins-ci.org/releases/'
+    }
 }
 
 dependencies {
     // Use the latest Groovy version for building this library
     implementation 'org.codehaus.groovy:groovy-all:2.5.10'
 
+    // Spring
+    compileOnly 'org.springframework.boot:spring-boot-starter-webflux:2.2.6.RELEASE'
+    compileOnly 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
+
     // Jenkins
     compileOnly 'org.eclipse.hudson:hudson-core:3.0.0'
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+    compileOnly 'org.jenkins-ci.plugins:credentials:2.3.5'
+    compileOnly 'org.jenkins-ci.plugins:credentials-binding:1.21'
+    compile group: 'com.cloudbees.jenkins.plugins', name: 'cloudbees-credentials', version: '3.3'
     annotationProcessor 'org.eclipse.hudson:hudson-core:3.0.0'
 
     // Use the awesome Spock testing and specification framework
