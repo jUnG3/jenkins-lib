@@ -7,7 +7,7 @@ pipeline {
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        dockerChoice(name: 'CHOICE', description: 'Pick something')
+        choice(name: 'CHOICE', choices: ['Yolo'], description: 'Pick something')
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
