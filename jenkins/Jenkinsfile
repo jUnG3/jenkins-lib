@@ -7,7 +7,7 @@ pipeline {
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(name: 'CHOICE', choices: choices.getSome(), description: 'Pick something')
+        choice(name: 'CHOICE', choices: ["Yolo"], description: 'Pick something')
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
@@ -23,6 +23,9 @@ pipeline {
                 echo "Choice: ${params.CHOICE}"
 
                 echo "Password: ${params.PASSWORD}"
+                script {
+                    choices.getSome()
+                }
             }
         }
     }
