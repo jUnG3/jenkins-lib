@@ -7,6 +7,6 @@ class ArtifactoryDockerRepository {
     private String baseUrl = "https://localhost"
 
     public List<String> dockerChoices(UsernamePasswordMultiBinding auth) {
-        return new ArrayList<String>()
+        return new ArrayList<String>(Collections.of("Yolo"))
     }
 }
